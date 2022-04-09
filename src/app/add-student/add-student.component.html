@@ -1,0 +1,22 @@
+<form [formGroup]="addStudentForm" (submit)="createNewStudent()">
+    <br>
+
+    <input name="firstName" formControlName="firstName" type="text" placeholder="First Name"   > 
+    <div *ngIf="getAddStudentFormControl['firstName'].touched">
+        <span *ngIf="getAddStudentFormControl['firstName'].errors?.['required']"> Requireddddd</span>
+        <span *ngIf="getAddStudentFormControl['firstName'].errors?.['minLength']"> Requireddddd</span>
+        <span *ngIf="getAddStudentFormControl['firstName'].errors?.['maxLength']"> Requireddddd</span>
+    </div>
+    <br>
+    <br>
+    <input name="lastName" formControlName="lastName" type="text" placeholder="Last Name"   > 
+    <br>
+    <br>
+    <input name="email" formControlName="email" type="email" placeholder="Email"   > 
+    <br>
+    <br>
+    <button type="submit" [disabled]="!addStudentForm.valid" >Save</button>    
+
+    
+
+</form>
